@@ -34,7 +34,7 @@ def main() -> None:
         "Chat, is this real?",
         "Number fifteeeeeen, burger king foot lettuuuuuuce...",
         "Please, Speed, I need this! My mom is kinda homeless...",
-
+        "You can't afford to be neutral on a moving train.",
         ]
     
     st.markdown("# :rainbow[Babi UwU!]")
@@ -45,7 +45,7 @@ def main() -> None:
     input_col, output_col = st.columns(2)
     with input_col:
         st.write("Please insert your text here... >.<")
-        text = st.code(language="text", height="stretch")
+        text = st.text_area("Please insert your text here... >.<", label_visibility="collapsed", height="stretch")
     with output_col:
         st.write("uwu-ified text:")
         if text:
@@ -53,8 +53,8 @@ def main() -> None:
         else:
             st.code(text_to_uwu(random.choice(placeholders)), language="text", height="stretch")
     
-    st.caption("Version 1.0.0s")
-    st.caption("Made wuv by [@obabigail] on github! Check out the repo [here](https://github.com/obabigail/uwuifier)!")
+    st.caption("Version 1.0.0")
+    st.caption("Made wuv by [@obabigail](https://github.com/obabigail) on github! Check out the repo [here](https://github.com/obabigail/uwuifier)!")
 
 if __name__ == "__main__":
     main()
