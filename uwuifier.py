@@ -11,8 +11,14 @@ def text_to_uwu(text: str) -> str:
         if text[index] == "l" or text[index] == "r":
             uwuified += "w"
             index += 1
+        elif text[index] == "L" or text[index] == "R":
+            uwuified += "W"
+            index += 1
         elif text[index] == "t" and index + 1 < text_size and text[index + 1] == "h":
             uwuified += "d"
+            index += 2
+        elif text[index] == "T" and index + 1 < text_size and text[index + 1] == "H":
+            uwuified += "D"
             index += 2
         else:
             uwuified += text[index]
