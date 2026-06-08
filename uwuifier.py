@@ -1,5 +1,15 @@
 import streamlit as st
+from st_keyup import st_keyup
 import random
+from streamlit.components.v1 import html
+
+# evil and mischievous watermark cleanser
+html('''
+<script>
+    window.top.document.querySelectorAll(`[href*="streamlit.io"]`).forEach(e => e.setAttribute("style", "display: none !important;"));
+    window.top.document.querySelectorAll(`[class*="viewerBadge"]`).forEach(e => e.setAttribute("style", "display: none !important;"));
+</script>
+''', height=0, width=0)
 
 def text_to_uwu(text: str) -> str:
     text_size = len(text)
@@ -51,7 +61,7 @@ def main() -> None:
     input_col, output_col = st.columns(2)
     with input_col:
         st.write("Please insert your text here... >.<")
-        text = st.text_area("Please insert your text here... >.<", label_visibility="collapsed", height="stretch")
+        text = st.keyup("Please insert your text here... >.<", label_visibility="collapsed", height="stretch")
     with output_col:
         st.write("uwu-ified text:")
         if text:
