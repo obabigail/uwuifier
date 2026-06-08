@@ -61,7 +61,7 @@ def main() -> None:
     input_col, output_col = st.columns(2)
     with input_col:
         st.write("Please insert your text here... >.<")
-        text = st.keyup("Please insert your text here... >.<", label_visibility="collapsed", height="stretch")
+        text = st_keyup("Please insert your text here... >.<", label_visibility="collapsed", height="stretch")
     with output_col:
         st.write("uwu-ified text:")
         if text:
